@@ -26,21 +26,20 @@ class Combinator
     def self.combine(c)
         result = []
 
-        zero_like_chars = ['0', 'o', 'O', ')']
-        seven_like_chars = ['7', 'z', 'Z', '&']
-        one_like_chars = ['1', 'l', 'L', 'i', 'I', '!']
+        special_substitutions = [
+            ['0', 'o', 'O', ')'],
+            ['7', 'z', 'Z', '&'],
+            ['1', 'l', 'L', 'i', 'I', '!'],
+            ['2', '@']
+        ]
 
-        if zero_like_chars.include? c then
-            result.push zero_like_chars
-        elsif one_like_chars.include? c then
-            result.push one_like_chars
-        elsif seven_like_chars.include? c then
-            result.push seven_like_chars
+        target_substitution_list = special_substitutions.select { |l|
+            l.include? c 
+        }
+
+        if target_substitution_list.length > 0 then
+            result.push target_substitution_list
         else
-            # result.push c.downcase
-            # if c.downcase != c.upcase then
-            #     result.push c.upcase
-            # end
             result.push c
 
             if c.upcase != c.downcase && c == c.upcase then

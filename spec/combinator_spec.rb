@@ -49,5 +49,11 @@ describe 'Combinator' do
                 'z', 'Z', '7', '&'
             ])
         }
+
+        ['2', '@'].each { |c|
+            expect(Combinator.generate(c)).to match_array([
+                '2', '@'
+            ])
+        }
     end
 end
