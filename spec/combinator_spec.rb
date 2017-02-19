@@ -38,9 +38,9 @@ describe 'Combinator' do
             ])
         }
 
-        ['1', 'i', 'I', 'l', 'L', '!'].each { |c|
+        ['1', 'i', 'I', 'l', 'L', '!', '|'].each { |c|
             expect(Combinator.generate(c)).to match_array([
-                '1', 'i', 'I', 'l', 'L', '!'
+                '1', 'i', 'I', 'l', 'L', '!', '|'
             ])
         }
 
