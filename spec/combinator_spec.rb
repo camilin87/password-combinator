@@ -31,8 +31,12 @@ describe 'Combinator' do
             'o', 'O', '0'
         ])
 
+        expect(Combinator.generate('O')).to match_array([
+            'o', 'O', '0'
+        ])
+
         expect(Combinator.generate('0')).to match_array([
-            '0', 'o', 'O'
+            'o', 'O', '0'
         ])
     end
 
@@ -42,11 +46,25 @@ describe 'Combinator' do
         ])
 
         expect(Combinator.generate('i')).to match_array([
-            'i', 'I', '1', 'l', 'L'
+            '1', 'i', 'I', 'l', 'L'
         ])
 
         expect(Combinator.generate('l')).to match_array([
-            'l', 'L', '1', 'i', 'I'
+            '1', 'i', 'I', 'l', 'L'
+        ])
+    end
+
+    it 'zorro like things' do
+        expect(Combinator.generate('z')).to match_array([
+            'z', 'Z', '7'
+        ])
+
+        expect(Combinator.generate('Z')).to match_array([
+            'z', 'Z', '7'
+        ])
+
+        expect(Combinator.generate('7')).to match_array([
+            'z', 'Z', '7'
         ])
     end
 

@@ -27,12 +27,15 @@ class Combinator
         result = []
 
         zero_like_chars = ['0', 'o', 'O']
+        seven_like_chars = ['7', 'z', 'Z']
         one_like_chars = ['1', 'l', 'L', 'i', 'I']
 
         if zero_like_chars.include? c then
             result.push zero_like_chars
         elsif one_like_chars.include? c then
             result.push one_like_chars
+        elsif seven_like_chars.include? c then
+            result.push seven_like_chars
         else
             result.push c.downcase
             if c.downcase != c.upcase then
