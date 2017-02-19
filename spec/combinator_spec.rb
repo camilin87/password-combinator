@@ -24,4 +24,12 @@ describe 'Combinator' do
             '0'
         ])
     end
+
+    it 'combines zeros to Os' do
+        expect(Combinator.generate('0')).to match_array([
+            '0',
+            'o',
+            'O'
+        ])
+    end
 end

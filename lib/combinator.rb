@@ -31,7 +31,13 @@ class Combinator
         end
 
         if c.downcase == 'o' then
-            Combinator.combine('0').each{ |c1| result.push(c1) }
+            result.push '0'
+        end
+
+        if c == '0' then
+            Combinator.combine('o')
+                .select { |c1| c1 != c }
+                .each { |c1| result.push(c1) }
         end
 
         result
