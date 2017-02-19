@@ -24,9 +24,16 @@ class Combinator
     end
 
     def self.combine(c)
-        [
-            c.downcase,
-            c.upcase
-        ]
+        result = [c.downcase]
+
+        if c.downcase != c.upcase then
+            result.push(c.upcase)
+        end
+
+        if c.downcase == 'o' then
+            Combinator.combine('0').each{ |c1| result.push(c1) }
+        end
+
+        result
     end
 end
