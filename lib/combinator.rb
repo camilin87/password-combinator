@@ -24,22 +24,22 @@ class Combinator
     end
 
     def self.combine(c)
-        result = [c.downcase]
+        result = []
 
-        if c.downcase != c.upcase then
-            result.push(c.upcase)
+        zero_like_chars = ['0', 'o', 'O']
+        one_like_chars = ['1', 'l', 'L', 'i', 'I']
+
+        if zero_like_chars.include? c then
+            result.push zero_like_chars
+        elsif one_like_chars.include? c then
+            result.push one_like_chars
+        else
+            result.push c.downcase
+            if c.downcase != c.upcase then
+                result.push c.upcase
+            end
         end
 
-        if c.downcase == 'o' then
-            result.push '0'
-        end
-
-        if c == '0' then
-            Combinator.combine('o')
-                .select { |c1| c1 != c }
-                .each { |c1| result.push(c1) }
-        end
-
-        result
+        result.flatten.uniq
     end
 end
