@@ -42,4 +42,12 @@ describe 'Combinator' do
             'l', 'L', '1', 'i', 'I'
         ])
     end
+
+    it 'multiple complex combinations' do
+        expect(Combinator.generate('1b0')).to match_array([
+            '1b0', '1B0', 'ib0', 'iB0', 'Ib0', 'IB0', 'lb0', 'lB0', 'Lb0', 'LB0', 
+            '1bo', '1Bo', 'ibo', 'iBo', 'Ibo', 'IBo', 'lbo', 'lBo', 'Lbo', 'LBo',
+            '1bO', '1BO', 'ibO', 'iBO', 'IbO', 'IBO', 'lbO', 'lBO', 'LbO', 'LBO'
+        ])
+    end
 end
