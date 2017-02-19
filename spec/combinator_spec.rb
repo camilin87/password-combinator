@@ -44,15 +44,51 @@ describe 'Combinator' do
             ])
         }
 
+        ['2', '@'].each { |c|
+            expect(Combinator.generate(c)).to match_array([
+                '2', '@'
+            ])
+        }
+
+        ['3', '#'].each { |c|
+            expect(Combinator.generate(c)).to match_array([
+                '3', '#'
+            ])
+        }
+
+        ['4', '$'].each { |c|
+            expect(Combinator.generate(c)).to match_array([
+                '4', '$'
+            ])
+        }
+
+        ['5', '%'].each { |c|
+            expect(Combinator.generate(c)).to match_array([
+                '5', '%'
+            ])
+        }
+
+        ['6', '^'].each { |c|
+            expect(Combinator.generate(c)).to match_array([
+                '6', '^'
+            ])
+        }
+
         ['z', 'Z', '7', '&'].each { |c|
             expect(Combinator.generate(c)).to match_array([
                 'z', 'Z', '7', '&'
             ])
         }
 
-        ['2', '@'].each { |c|
+        ['8', '*'].each { |c|
             expect(Combinator.generate(c)).to match_array([
-                '2', '@'
+                '8', '*'
+            ])
+        }
+
+        ['9', '('].each { |c|
+            expect(Combinator.generate(c)).to match_array([
+                '9', '('
             ])
         }
     end

@@ -28,9 +28,15 @@ class Combinator
 
         special_substitutions = [
             ['0', 'o', 'O', ')'],
-            ['7', 'z', 'Z', '&'],
             ['1', 'l', 'L', 'i', 'I', '!', '|', '\\'],
-            ['2', '@']
+            ['2', '@'],
+            ['3', '#'],
+            ['4', '$'],
+            ['5', '%'],
+            ['6', '^'],
+            ['7', 'z', 'Z', '&'],
+            ['8', '*'],
+            ['9', '(']
         ]
 
         target_substitution_list = special_substitutions.select { |l|
