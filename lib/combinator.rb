@@ -26,9 +26,9 @@ class Combinator
     def self.combine(c)
         result = []
 
-        zero_like_chars = ['0', 'o', 'O']
-        seven_like_chars = ['7', 'z', 'Z']
-        one_like_chars = ['1', 'l', 'L', 'i', 'I']
+        zero_like_chars = ['0', 'o', 'O', ')']
+        seven_like_chars = ['7', 'z', 'Z', '&']
+        one_like_chars = ['1', 'l', 'L', 'i', 'I', '!']
 
         if zero_like_chars.include? c then
             result.push zero_like_chars
