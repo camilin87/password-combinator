@@ -5,7 +5,7 @@ For those times where the characters in password were not typed correctly
 ## Sample usage  
 
 ```bash
-ruby main.rb abc > combinations.txt && cat combinations.txt
+ruby main.rb ABC > combinations.txt && cat combinations.txt
 ```
 The above command will produce the following output  
 
