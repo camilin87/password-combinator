@@ -1,20 +1,27 @@
 require 'combinator'
 
 describe 'Combinator' do
-    it 'generates case combinations' do
+    it 'conly changes casing for uppercase letters' do
         expect(Combinator.generate('a')).to eq([
-            'a', 'A'
+            'a'
+        ])
+
+        expect(Combinator.generate('A')).to eq([
+            'A',
+            'a'
         ])
     end
 
     it 'combines every character' do
         expect(Combinator.generate('Ba')).to match_array([
-            'Ba', 'ba', 'BA', 'bA'
+            'Ba', 'ba'
         ])
     end
 
     it 'generates expected combinations' do
-        expect(Combinator.generate('abc')).to match_array([
+        expect(Combinator.generate('abc')).to match_array(['abc'])
+
+        expect(Combinator.generate('ABC')).to match_array([
             'abc',
             'abC',
             'aBc',
@@ -69,7 +76,7 @@ describe 'Combinator' do
     end
 
     it 'multiple complex combinations' do
-        expect(Combinator.generate('1b0')).to match_array([
+        expect(Combinator.generate('1B0')).to match_array([
             '1b0', '1B0', 'ib0', 'iB0', 'Ib0', 'IB0', 'lb0', 'lB0', 'Lb0', 'LB0', 
             '1bo', '1Bo', 'ibo', 'iBo', 'Ibo', 'IBo', 'lbo', 'lBo', 'Lbo', 'LBo',
             '1bO', '1BO', 'ibO', 'iBO', 'IbO', 'IBO', 'lbO', 'lBO', 'LbO', 'LBO'

@@ -37,9 +37,14 @@ class Combinator
         elsif seven_like_chars.include? c then
             result.push seven_like_chars
         else
-            result.push c.downcase
-            if c.downcase != c.upcase then
-                result.push c.upcase
+            # result.push c.downcase
+            # if c.downcase != c.upcase then
+            #     result.push c.upcase
+            # end
+            result.push c
+
+            if c.upcase != c.downcase && c == c.upcase then
+                result.push c.downcase
             end
         end
 
