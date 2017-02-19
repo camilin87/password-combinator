@@ -13,6 +13,19 @@ describe 'Combinator' do
         ])
     end
 
+    it 'generates expected combinations' do
+        expect(Combinator.generate('abc')).to match_array([
+            'abc',
+            'abC',
+            'aBc',
+            'aBC',
+            'Abc',
+            'AbC',
+            'ABc',
+            'ABC'
+        ])
+    end
+
     it 'combines O to zeros' do
         expect(Combinator.generate('o')).to match_array([
             'o', 'O', '0'
