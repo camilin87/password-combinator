@@ -7,4 +7,13 @@ describe 'Combinator' do
             'A'
         ])
     end
+
+    it 'combines every character' do
+        expect(Combinator.generate('Ba')).to match_array([
+            'Ba',
+            'ba',
+            'BA',
+            'bA'
+        ])
+    end
 end
